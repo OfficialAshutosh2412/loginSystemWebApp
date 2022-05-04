@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>page | Welcome</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+</head>
+<body>
+{% block body %}
+<section class="welcome">
+    <div>
+        <div>
+            <h1>Welcome bro !</h1>
+        </div>
+        <div>
+            {% for i in data%}
+            <h4>
+                {{i[0]}}
+            </h4>
+            {% endfor %}
+        </div>
+        <br>
+        <div>
+            <a href="{{'/'}}" class="btn" style="padding:1%;">Logout</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+</body>
+</html>

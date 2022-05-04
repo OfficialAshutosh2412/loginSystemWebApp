@@ -1,0 +1,178 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    font-family:arial;
+    color:white;
+}
+body{
+    background-color:#1e3133;
+}
+.signup{
+    text-align:center;
+    font-size:2rem;
+    padding:1%;
+}
+/*- for element row* -*/
+.flex{
+    display:flex;
+}
+/*--------------------*/
+.flex div{
+    width:100%;
+}
+.form{
+    width:40%;
+    padding:2%;
+    min-width:298px;
+    max-width:1200px;
+    box-shadow:13px 14px 50px 3px #000000;
+    background:linear-gradient(45deg, #009eeb, #ff236e);
+    border-radius:5px;
+    border:1px solid #002422;
+}
+/*-------media query ------------*/
+@media only screen and (max-width:952px){
+    .form{width:60%}
+}
+@media only screen and (max-width:330px){
+
+}
+@media only screen and (max-width:768px){
+    .form{width:80%;padding:5%}
+    .form div{margin:1%;}
+    .flex{
+        display:block;
+    }
+}
+/*--------------------------------*/
+.form div{
+    padding:1%;
+}
+.form label{
+    font-size:10pt;
+}
+.item-center{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+input{
+    color:black;
+    width:100%;
+}
+/*input[type=text] >>> Text Box*/
+.textField{
+    height:25px;
+    border:none;
+    border-radius:5px;
+    transition: all 0.3s;
+    color:black;
+    font-size:10pt;
+    padding:3%;
+    color:#3b3b3b;
+}
+
+.textField:hover{
+    outline:1px solid skyblue;
+    box-shadow:0px 0px 10px 0px white;
+    transform:translateY(-2px);
+}
+.textField:focus{
+    outline:1px solid skyblue;
+    box-shadow:0px 0px 10px 0px white;
+    transform:translateY(-2px);
+}
+textarea{
+    border-radius:5px;
+    color:black;
+    border:none;
+    padding:2%;
+}
+textarea:focus{
+    outline:1px solid skyblue;
+    box-shadow:0px 0px 10px 0px white;
+    transform:translateY(-2px);
+}
+textarea:hover{
+    outline:1px solid skyblue;
+    border:none;
+    box-shadow:0px 0px 10px 0px white;
+    transform:translateY(-2px);
+}
+input[type=checkbox]:checked{
+    border-radius:100%;
+}
+/*button >>> btn*/
+.btn{
+    width:20%;
+    color:white;
+    height:30px;
+    border:1px solid grey;
+    border-radius:3px;
+    background:linear-gradient(110deg, #ff236e 50%, #009eeb 50%);
+    background-size:300%;
+    transition:all 0.7s;
+    box-shadow:3px 4px 7px 0px;
+}
+.btn:hover{
+    background-position:right;
+    box-shadow:3px 4px 7px 0px;
+    cursor:pointer;
+    color:black;
+    transform:translateY(-3px);
+}
+/* link animation css---------------*/
+.linkAnimation{
+    background:linear-gradient(90deg,#ff236e 50%, rgba(0,0,0,0) 50%);
+    background-position:right;
+    background-size:200%;
+    transition:all 0.5s;
+}
+.linkAnimation:hover{
+    background-position:left;
+    background-size:250%;
+
+}
+a{text-decoration:none;}
+/*login page css */
+.section-center{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-center{
+    width:60%;display:flex;
+    justify-content:center;
+    align-items:center;
+}
+/*------welcome page-----*/
+.welcome{
+    display:flex;
+    height:100vh;
+    align-items:center;
+    text-align:center;
+    justify-content:center;
+}
+.welcome h1{
+    font-size:60pt;
+    font-weight:300;
+    letter-spacing:10px;
+}
+.welcome h4{
+    font-size:30pt;
+    font-weight:100;
+    font-style:italic;
+    color:#bfbfbf;
+}
+.errorMsg{
+    position:absolute;
+    width:30%;
+    margin-top:1%;
+    text-align:center;
+    border-radius:7px;
+    font-size:10pt;
+    box-shadow:1px 1px 12px 1px black;
+}

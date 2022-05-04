@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page | Signup</title>
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}"/>
+    <script type="text/javascript" src="{{url_for('static', filename = 'js/validation.js')}}"></script>
+</head>
+<body>
+{% block body %}
+    <section>
+        <div class="signup">
+            <label>Signup</label>
+        </div>
+        <div class="item-center">
+            <form class="form" method="post" action="/">
+                <div class="flex">
+                    <div>
+                        <label>Email</label><br>
+                        <input type="email" class="textField" id="email" onkeypress="clearMailError(this)" name="gmail">
+                        <small id="mailError"></small>
+                    </div>
+                    <div>
+                        <label>First Name</label><br>
+                        <input type="text" class="textField" id="fname" onkeypress="clearFnameError(this)" name="fName">
+                        <small id="fnameError"></small>
+                    </div>
+                    <div>
+                        <label>Last Name</label><br>
+                        <input type="text" class="textField" id="lname" onkeypress="clearLnameError(this)" name="lName">
+                        <small id="lnameError"></small>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div>
+                        <label>Password</label><br>
+                        <input type="password" class="textField" name="passWord" id="password" maxlength="10"
+                            onkeypress="clearPasswordError(this)">
+                        <small id="pswdError"></small>
+                    </div>
+                    <div>
+                        <label>Confirm Password</label><br>
+                        <input type="password" name="" class="textField" id="cpassword" maxlength="10"
+                            onkeypress="clearCpasswordError(this)">
+                        <small id="cpswdError"></small>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div>
+                        <label>Gender</label><br>
+                        <input list="gender" name="gndr"  class="textField"
+                               placeholder="select" onkeypress="clearGenderError(this)">
+                        <datalist id="gender" class="textField">
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Transgender</option>
+                        </datalist>
+                        <small id="genderError"></small>
+                    </div>
+                    <div>
+                        <label>Date of Birth</label><br>
+                        <input type="date" name="dateOfBirth"  class="textField" id="dob" onkeypress="clearDobError(this)">
+                        <small id="dobError"></small>
+                    </div>
+                    <div>
+                        <label>Course</label><br>
+                        <input list="department" class="textField" id="courses"
+                               placeholder="select" onkeypress="clearCourseError(this)" name="corse">
+                        <datalist  id="department" class="textField">
+                            <option>BA</option>
+                            <option>MA</option>
+                            <option>BCA</option>
+                            <option>MCA</option>
+                            <option>B.Sc</option>
+                            <option>M.Sc</option>
+                        </datalist>
+                        <small id="courseError"></small>
+                    </div>
+                </div>
+                <div>
+                    <label>Address</label><br>
+                    <textarea name="adrs" style="width:100%;" rows="6" id="address" onkeypress="clearAdrsError(this)">
+                    </textarea>
+                    <small id="adrsError"></small>
+                </div>
+                <div>
+                    <input type="checkbox" style="width:5%" class="textField"  id="check">
+                    <label for="check">Accept terms & conditions</label>
+                </div>
+                <div class="item-center">
+                    <input class="btn" type="submit" id="signup" value="signup"
+                           onclick="return validation()" name="register">
+                </div>
+                <div style="text-align:center;">
+                    <label>Already have an account?</label>
+                    <a href="{{url_for('login')}}" class="linkAnimation">
+                        click here
+                    </a>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}
+</body>
+</html>

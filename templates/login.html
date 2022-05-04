@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page | Login</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+    <script type="text/javascript" src="{{url_for('static', filename = 'js/validation.js')}}"></script>
+</head>
+<body>
+{% block body %}
+<div style="display:flex;justify-content:center;color:red" id="messageBox">
+    <div class="errorMsg">
+        <label style="color:#ffaa00">{{msg}}</label>
+    </div>
+</div>
+
+<section class="section-center">
+    <div class="login-center">
+        <form class="form" style="width:50%;padding:4%" method="post" action="/login">
+            <div style="padding:5%">
+                <label style='font-size:2rem;font-weight:50px;'>Login</label>
+            </div>
+            <div>
+                <label>Email</label><br>
+                <input type="email" id="email" name="email" class="textField" style="width:70%" onkeypress="loginEmail(this)"><br>
+                <small id="logMailError"></small>
+            </div>
+            <div>
+                <label>Password</label><br>
+                <input type="password" class="textField" style="width:70%" id="showPassword" name="pswd">
+            </div>
+            <br>
+            <div>
+                <input type="checkbox" style="width:5%;margin-top:3%" name="" id="show"
+                       onclick="showPswd(this)" class="textField">
+                <label for="show">Show password</label><br>
+            </div>
+            <br>
+            <div>
+                <input class="btn" type="submit" id="login" value="login" onclick="return validLogin()" name="login">
+            </div>
+            <div>
+                <label>Not a member?</label>
+                <a href="{{url_for('signup')}}" class="linkAnimation">Click here</a>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}
+</body>
+</html>
